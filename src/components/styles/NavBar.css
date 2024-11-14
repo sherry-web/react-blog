@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #033043;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .navbar a:hover {
+    background-color: #FDA521;
+    color: #033043;
+  }

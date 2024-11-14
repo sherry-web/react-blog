@@ -1,0 +1,15 @@
+.blog-post {
+    padding: 20px;
+    margin: 15px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .post-title {
+    color: #033043;
+    font-size: 1.8em;
+    margin: 0;
+  }
+  .post-content {
+    font-size: 1.1em;
+    line-height: 1.6;
+  }
+  

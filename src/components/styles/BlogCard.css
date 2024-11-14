@@ -1,0 +1,31 @@
+.blog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 16px;
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+  }
+  
+  .blog-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    margin-bottom: 12px; /* Space between image and text */
+  }
+  
+  .blog-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 8px 0;
+  }
+  
+  .blog-content {
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+  }

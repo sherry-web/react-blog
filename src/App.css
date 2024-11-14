@@ -1,52 +1,249 @@
+/* Set global font-family and base font size */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--dark-color); /* Dark text color for better contrast */
+  background-color: var(--light-background); /* Light background color */
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
 }
 
-.App {
-  text-align: center;
-  margin: 20px;
+/* Consistent spacing around all content */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-header {
-  background-color: #033043;
-  color: #fff;
-  padding: 20px;
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Helvetica', sans-serif;
+  margin: 1rem 0;
+  color: var(--dark-color);
 }
 
-.blog-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
-.blog-post {
-  background-color: #fff;
-  margin: 20px;
-  padding: 20px;
-  width: 80%;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+h2 {
+  font-size: 2rem;
+  font-weight: semi-bold;
 }
 
-footer {
-  background-color: #033043;
-  color: #fff;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
+h3 {
+  font-size: 1.5rem;
 }
 
-h1, h2 {
-  font-size: 2em;
-  margin: 0;
+h4 {
+  font-size: 1.25rem;
 }
 
+/* Paragraphs */
 p {
-  font-size: 1.2em;
-  line-height: 1.5;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Buttons */
+button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  background-color: var(--primary-color); /* Primary color */
+  color: var(--dark-color); /* Dark text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-color); /* Accent color for hover effect */
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--secondary-color); /* Highlight focus with accent color */
+}
+
+/* Default Mobile First (Up to 768px) */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Ensure navbar and sidebar are stacked vertically on mobile */
+  .navbar, .sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  /* Stack blog list and sidebar for better readability */
+  .content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Tablet Layout (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    width: 80%;
+    padding: 1.5rem;
+  }
+
+  .content {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    flex: 1;
+  }
+
+  .pagination {
+    justify-content: center;
+  }
+}
+
+/* Desktop Layout (1024px and above) */
+@media (min-width: 1024px) {
+  .container {
+    width: 75%;
+    padding: 2rem;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+/* Links */
+a {
+  color: var(--accent-color); /* Accent color for links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--secondary-color); /* Highlight links on hover */
+  text-decoration: underline;
+}
+
+/* Blog Cards */
+.blog-card {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Title */
+.blog-card h3 {
+  font-size: 1.5rem;
+  color: var(--dark-color);
+}
+
+/* Card Content */
+.blog-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Primary Buttons */
+button.primary {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.primary:hover {
+  background-color: var(--secondary-color);
+}
+
+button.primary:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Color Palette */
+:root {
+  --primary-color: #FCDC73;
+  --secondary-color: #E76268;
+  --dark-color: #193948;
+  --accent-color: #4FADCO;
+  --light-background: #E9E3D5;
+  --dark-background: #033043;
+}
+
+/* Apply color to body and text */
+body {
+  background-color: var(--light-background);
+  color: var(--dark-color);
+}
+
+h1, h2, h3, h4 {
+  color: var(--dark-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+a {
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Notifications */
+.notification {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
