@@ -1,0 +1,15 @@
+.hero-banner {
+    padding: 40px;
+    text-align: center;
+    background-color: #033043;
+    color: #fff;
+  }
+  
+  .hero-banner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-banner p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }

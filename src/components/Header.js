@@ -1,11 +1,12 @@
 import React from 'react';
 import './styles/Header.css';
+import logo from './assets/images/logo.svg';
+import avatarIcon from './assets/images/icons/avatar.svg';
 
 const Header = () => (
   <header className="header">
     <div className="logo">
-      <img src="/logo.png" alt="Logo" />
-      <h1>My Blog</h1>
+    <img src={logo} alt="Logo" className="logo" />
     </div>
     <nav className="nav-links">
       <ul>
@@ -15,8 +16,9 @@ const Header = () => (
       </ul>
     </nav>
     <div className="user-profile">
-      <img src="/user-icon.png" alt="User" />
+      <img src={avatarIcon} alt="User" className="avatar" />
     </div>
+
   </header>
 );
 

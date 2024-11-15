@@ -1,30 +1,57 @@
 .header {
+  background-color: #193948; /* Dark color from the palette */
+  color: white;
+  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Evenly distribute items */
+  align-items: center; /* Center items vertically */
+}
+
+/* Logo section */
+.header .logo {
+  display: flex;
   align-items: center;
-  background-color: #033043;
-  padding: 10px 20px;
+  width: 40px;
+  height: 40px;
 }
 
+/* Logo heading */
 .header .logo h1 {
-  color: #FDA521;
+  color: #FCDC73; /* Light color from the palette */
   font-size: 24px;
+  margin: 0; /* Remove default margin */
 }
 
+/* Navigation section */
+.header-nav {
+  flex: 1; /* Flexbox property */
+  justify-content: center; /* Center navigation links */
+  align-items: center; /* Center vertically */
+}
+
+/* Links styling */
 .nav-links ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links a {
-  color: #fff;
+  color: #FFFFFF;
   text-decoration: none;
   font-size: 18px;
 }
 
 .nav-links a:hover {
-  color: #FDA521;
+  color: #FDA521; /* Accent color for hover */
+}
+
+/* User profile section */
+.header-user {
+  display: flex;
+  align-items: center; /* Center user icon vertically */
 }
 
 .user-profile img {

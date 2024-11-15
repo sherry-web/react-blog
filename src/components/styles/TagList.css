@@ -12,3 +12,10 @@
     cursor: pointer;
   }
   
+  .tag-list span {
+    padding: 8px;
+    background-color: var(--light-background); /* Light beige for background */
+    color: var(--dark-color); /* Deep teal for text */
+    border-radius: 4px;
+    cursor: pointer;
+  }

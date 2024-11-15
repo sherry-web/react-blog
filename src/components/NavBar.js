@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Navbar = ({ avatar }) => (
+const Navbar = () => (
   <nav className="navbar">
-    <img src={avatar} alt="User Avatar" className="avatar" />
+    {/* Add other navbar elements here as needed */}
   </nav>
 );
 

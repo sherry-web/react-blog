@@ -1,31 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';  // Import useParams hook
-import './styles/FeaturedPost.css';
+import React from 'react';
+import PropTypes from 'prop-types'; 
+import './styles/FeaturedPosts.css';
 
-const FeaturedPost = () => {
-  const { id } = useParams();  // Get the 'id' parameter from the URL
+const FeaturedPosts = ({ posts = [] }) => ( 
+  <section className="featured-posts">
+    <h2>Featured Posts</h2>
+    <ul>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  </section>
+);
 
-  const [post, setPost] = useState(null);
-
-  useEffect(() => {
-    const fetchPost = async () => {
-      const response = await fetch(`https://api.example.com/posts/${id}`);
-      const data = await response.json();
-      setPost(data);
-    };
-    if (id) {
-      fetchPost();  // Only fetch if 'id' is available
-    }
-  }, [id]);  // Only re-run when 'id' changes
-
-  if (!post) return <div>Loading...</div>;
-
-  return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
-    </div>
-  );
+// Prop validation
+FeaturedPosts.propTypes = {
+  posts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+    })
+  ),
 };
 
-export default FeaturedPost;
+export default FeaturedPosts;

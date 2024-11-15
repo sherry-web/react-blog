@@ -1,14 +1,28 @@
+:root {
+  --primary-color: #FCDC73; /* Yellow */
+  --secondary-color: #E76268; /* Coral */
+  --dark-color: #193948; /* Deep teal */
+  --accent-color: #4FADCO; /* Aqua blue */
+  --light-background: #E9E3D5; /* Light beige */
+}
+
 /* Set global font-family and base font size */
 body {
-  font-family: 'Arial', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: var(--dark-color); /* Dark text color for better contrast */
-  background-color: var(--light-background); /* Light background color */
+  font-family: Arial, sans-serif;
+  background-color: #fcdc73;
+  color: #193948;
   margin: 0;
   padding: 0;
 }
 
+.blog-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 2rem;
+  justify-items: center; /* Centers each card horizontally */
+  align-items: center; /* Centers each card vertically */
+}
 /* Consistent spacing around all content */
 .container {
   width: 90%;
@@ -246,4 +260,57 @@ a:hover {
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 1rem;
+}
+
+
+/* Styling for Blog Post Container */
+.blog-post-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 20px;
+}
+
+/* Styling for each Blog Post Card */
+.blog-post-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image Styling */
+.blog-post-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Styling for Bullet Points under each card */
+.bullet-points {
+  margin-top: 15px;
+}
+
+.bullet-points ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bullet-points li {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.bullet-points li span {
+  font-weight: 500;
 }
