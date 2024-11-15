@@ -43,6 +43,10 @@ const App = () => {
         <HeroBanner />
 
         <main>
+  <div className="welcome-message">
+    <h1>Welcome to Our Blog</h1>
+    <p>Explore the latest articles, tutorials, and tips from our team.</p>
+  </div>
           <CategoryFilter categories={categories} onFilterSelect={handleCategorySelect} />
           <FeaturedPost post={posts[0]} /> {/* Show one featured post, for example */}
 

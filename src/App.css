@@ -4,71 +4,89 @@
   --dark-color: #193948; /* Deep teal */
   --accent-color: #4FADCO; /* Aqua blue */
   --light-background: #E9E3D5; /* Light beige */
+  --text-color-dark: #193948; /* Dark text color */
+  --text-color-light: #FFFFFF; /* Light text color */
+  --highlight-color: #FDA521; /* Highlight yellow-orange */
 }
 
-/* Set global font-family and base font size */
+/* Set global styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fcdc73;
-  color: #193948;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--light-background); /* Use light beige */
+  color: var(--text-color-dark); /* Dark text for readability */
   margin: 0;
   padding: 0;
-}
-
-.blog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 2rem;
-  justify-items: center; /* Centers each card horizontally */
-  align-items: center; /* Centers each card vertically */
-}
-/* Consistent spacing around all content */
-.container {
-  width: 90%;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Headings */
-h1, h2, h3, h4 {
-  font-family: 'Helvetica', sans-serif;
-  margin: 1rem 0;
-  color: var(--dark-color);
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-h2 {
-  font-size: 2rem;
-  font-weight: semi-bold;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-}
-
-/* Paragraphs */
-p {
-  font-size: 1rem;
-  margin: 0.5rem 0;
   line-height: 1.6;
-  color: #333;
+}
+
+/* Header and Welcome Section */
+.welcome-message {
+  background-color: var(--primary-color); /* Yellow */
+  color: var(--text-color-dark); /* Dark teal text */
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+/* Blog Post Container */
+.blog-post-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center; /* Center the cards */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  background-color: var(--light-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for emphasis */
+}
+
+/* Blog Post Card Styles */
+.blog-post-card {
+  background-color: var(--text-color-light); /* White for contrast */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 20px;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* More prominent shadow on hover */
+}
+
+.blog-post-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Blog Post Content */
+.blog-post-card h3 {
+  color: var(--dark-color); /* Dark teal */
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-card p {
+  color: var(--text-color-dark);
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Buttons */
 button {
-  font-size: 1rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-dark);
   padding: 10px 20px;
-  background-color: var(--primary-color); /* Primary color */
-  color: var(--dark-color); /* Dark text color */
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -76,241 +94,38 @@ button {
 }
 
 button:hover {
-  background-color: var(--accent-color); /* Accent color for hover effect */
+  background-color: var(--accent-color);
+  color: var(--text-color-light);
 }
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 5px var(--secondary-color); /* Highlight focus with accent color */
-}
-
-/* Default Mobile First (Up to 768px) */
-@media (max-width: 768px) {
-  .container {
-    width: 100%;
-    padding: 1rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.75rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-  }
-
-  /* Ensure navbar and sidebar are stacked vertically on mobile */
-  .navbar, .sidebar {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-
-  /* Stack blog list and sidebar for better readability */
-  .content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .pagination {
-    display: flex;
-    justify-content: center;
-  }
-}
-
-/* Tablet Layout (768px to 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    width: 80%;
-    padding: 1.5rem;
-  }
-
-  .content {
-    flex-direction: row;
-  }
-
-  .sidebar {
-    flex: 1;
-  }
-
-  .pagination {
-    justify-content: center;
-  }
-}
-
-/* Desktop Layout (1024px and above) */
-@media (min-width: 1024px) {
-  .container {
-    width: 75%;
-    padding: 2rem;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .pagination {
-    display: flex;
-    justify-content: flex-end;
-  }
+  box-shadow: 0 0 5px var(--secondary-color);
 }
 
 /* Links */
 a {
-  color: var(--accent-color); /* Accent color for links */
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--secondary-color); /* Highlight links on hover */
-  text-decoration: underline;
-}
-
-/* Blog Cards */
-.blog-card {
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Card Title */
-.blog-card h3 {
-  font-size: 1.5rem;
-  color: var(--dark-color);
-}
-
-/* Card Content */
-.blog-card p {
-  font-size: 1rem;
-  color: #666;
-}
-
-/* Primary Buttons */
-button.primary {
-  background-color: var(--primary-color);
-  color: var(--dark-color);
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button.primary:hover {
-  background-color: var(--secondary-color);
-}
-
-button.primary:focus {
-  outline: none;
-  box-shadow: 0 0 5px var(--primary-color);
-}
-
-/* Color Palette */
-:root {
-  --primary-color: #FCDC73;
-  --secondary-color: #E76268;
-  --dark-color: #193948;
-  --accent-color: #4FADCO;
-  --light-background: #E9E3D5;
-  --dark-background: #033043;
-}
-
-/* Apply color to body and text */
-body {
-  background-color: var(--light-background);
-  color: var(--dark-color);
-}
-
-h1, h2, h3, h4 {
-  color: var(--dark-color);
-}
-
-button {
-  background-color: var(--primary-color);
-  color: var(--dark-color);
-}
-
-button:hover {
-  background-color: var(--accent-color);
-}
-
-a {
   color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   color: var(--secondary-color);
+  text-decoration: underline;
 }
 
-/* Notifications */
-.notification {
-  background-color: var(--secondary-color);
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .blog-post-container {
+    padding: 1rem;
+  }
 
+  .welcome-message {
+    font-size: 1.5rem;
+  }
 
-/* Styling for Blog Post Container */
-.blog-post-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-  margin: 20px;
-}
-
-/* Styling for each Blog Post Card */
-.blog-post-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 250px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.blog-post-card:hover {
-  transform: scale(1.05);
-}
-
-/* Image Styling */
-.blog-post-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Styling for Bullet Points under each card */
-.bullet-points {
-  margin-top: 15px;
-}
-
-.bullet-points ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.bullet-points li {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 8px;
-}
-
-.bullet-points li span {
-  font-weight: 500;
+  .blog-post-card {
+    width: 90%; /* Full width on smaller screens */
+  }
 }
