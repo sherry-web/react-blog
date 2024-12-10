@@ -1,20 +1,16 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
 import Navbar from './components/NavBar';
 import BlogList from './components/BlogList';
 import Sidebar from './components/Sidebar';
-import Footer from './components/Footer';
 import SearchBar from './components/SearchBar';
 import Pagination from './components/Pagination';
-import FeaturedPost from './components/FeaturedPost'; // Ensure correct import
 import HeroBanner from './components/HeroBanner';
 import CategoryFilter from './components/CategoryFilter';
 import BackToTopButton from './components/BackToTopButton';
+import FeaturedPost from './components/FeaturedPost';
 import AppLayout from './components/AppLayout';
-
-import './components/styles/global.css';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -22,7 +18,6 @@ const App = () => {
   const [filteredCategory, setFilteredCategory] = useState('All');
 
   useEffect(() => {
-    // Sample posts or fetch from an API
     const samplePosts = [
       { id: 1, title: 'Blog Post 1', content: 'Content for the first blog post', category: 'Technology' },
       { id: 2, title: 'Blog Post 2', content: 'Content for the second blog post', category: 'Lifestyle' },
@@ -40,44 +35,45 @@ const App = () => {
 
   return (
     <AppLayout>
-    <Router>
-      <div className="App">
-        <Header />
+      <Router>
         <Navbar />
-        <HeroBanner />
-
-        <main>
-  <div className="welcome-message">
-    <h1>Welcome to Our Blog</h1>
-    <p>Explore the latest articles, tutorials, and tips from our team.</p>
-  </div>
-          <CategoryFilter categories={categories} onFilterSelect={handleCategorySelect} />
-          <FeaturedPost post={posts[0]} /> {/* Show one featured post, for example */}
-
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                {/* Unified Hero Section */}
+                <HeroBanner
+                  title="Welcome to Our Blog"
+                  subtitle="Explore the latest articles, tutorials, and tips from our team."
+                  styleType="primary"
+                />
+                <main>
+                  <CategoryFilter categories={categories} onFilterSelect={handleCategorySelect} />
+                  <FeaturedPost post={posts[0]} />
                   <SearchBar />
-                  <BlogList posts={filteredPosts} />
+                  <div className="frame">
+                    <BlogList posts={filteredPosts} />
+                  </div>
                   <Sidebar items={posts.map((post) => post.title)} />
                   <Pagination />
-                </>
-              }
-            />
-            {/* Pass a specific post to FeaturedPost */}
-            <Route
-              path="/post/:id"
-              element={<FeaturedPost post={posts.find(post => post.id === parseInt(window.location.pathname.split("/").pop()))} />}
-            />
-          </Routes>
-        </main>
+                </main>
+              </>
+            }
+          />
 
+          {/* Route: Individual Blog Post */}
+          <Route
+            path="/post/:id"
+            element={
+              <div className="featured-post-container">
+                <FeaturedPost post={posts.find((post) => post.id === parseInt(window.location.pathname.split('/').pop()))} />
+              </div>
+            }
+          />
+        </Routes>
         <BackToTopButton />
-        <Footer />
-      </div>
-    </Router>
+      </Router>
     </AppLayout>
   );
 };

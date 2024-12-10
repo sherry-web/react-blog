@@ -29,3 +29,17 @@
     color: #333;
     text-align: left;
   }
+
+  .featured-post-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    flex-direction: column; /* Optional: Ensures content stacks vertically */
+    padding: 20px; /* Adds some spacing around the content */
+    margin: 0 auto; /* Centers the container itself */
+    max-width: 800px; /* Limits the width of the content */
+    text-align: center; /* Centers text inside the container */
+    background-color: var(--text-color-light); /* Optional: Adds a light background for visibility */
+    border-radius: 8px; /* Optional: Rounds the edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow */
+  }
