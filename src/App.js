@@ -12,6 +12,9 @@ import FeaturedPost from './components/FeaturedPost'; // Ensure correct import
 import HeroBanner from './components/HeroBanner';
 import CategoryFilter from './components/CategoryFilter';
 import BackToTopButton from './components/BackToTopButton';
+import AppLayout from './components/AppLayout';
+
+import './components/styles/global.css';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -36,6 +39,7 @@ const App = () => {
   }, [posts, filteredCategory]);
 
   return (
+    <AppLayout>
     <Router>
       <div className="App">
         <Header />
@@ -74,6 +78,7 @@ const App = () => {
         <Footer />
       </div>
     </Router>
+    </AppLayout>
   );
 };
 
