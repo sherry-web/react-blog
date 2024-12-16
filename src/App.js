@@ -11,6 +11,7 @@ import CategoryFilter from './components/CategoryFilter';
 import BackToTopButton from './components/BackToTopButton';
 import FeaturedPost from './components/FeaturedPost';
 import AppLayout from './components/AppLayout';
+import './components/styles/modernStyles.css';
 
 const App = () => {
   const [posts, setPosts] = useState([]);

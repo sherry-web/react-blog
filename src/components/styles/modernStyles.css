@@ -1,0 +1,133 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header Styling */
+  header {
+    background-color: #333; /* Dark background for header */
+    color: #fff; /* White text for contrast */
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5rem; /* Larger title */
+    margin: 0;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+  }
+  
+  nav a:hover {
+    color: #FDA521; /* Change color on hover */
+  }
+  
+  /* Main Content Section */
+  main {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: auto;
+    background-color: #fff; /* White background for content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  article {
+    border-bottom: 1px solid #eee; /* Divider between posts */
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  article h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  article p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+  }
+  
+  /* Featured Post Section */
+  .featured-post {
+    background-color: #FDA521;
+    color: #fff;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+  }
+  
+  .featured-post h3 {
+    font-size: 2.5rem;
+  }
+  
+  .featured-post img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+  }
+  
+  /* Button Styling */
+  button, .btn {
+    background-color: #FDA521; /* Orange button background */
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover, .btn:hover {
+    background-color: #0A7273; /* Hover state for buttons */
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    article h2 {
+      font-size: 1.5rem;
+    }
+  
+    .featured-post h3 {
+      font-size: 2rem;
+    }
+  }
+  
